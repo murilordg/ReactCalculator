@@ -1,10 +1,12 @@
 {
-  "name": "ReactCalculator",
+  "name": "react-calculator",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
-    "android:release": "react-native run-android --variant=release",
+    "android": "npx react-native run-android && react-native start",
+    "android:release": "npx react-native run-android --variant=release",
+    "android:deploy": "cd android && ./gradlew clean && ./gradlew :app:bundleRelease",
+    "genkey": "keytool -genkeypair -v -keystore react-calculator-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000 && mv react-calculator-key.keystore android/app/",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",

@@ -67,8 +67,7 @@ Clone this project and simple run
 ```sh
 - git clone https://github.com/murilordg/ReactCalculator.git
 - npm i
-- react-native run-android
-- react-native start
+- npm run android
 ```
 
 
