@@ -1,19 +1,11 @@
 import React, { useState } from 'react';
 import { StyleSheet, TouchableOpacity, View, Text } from 'react-native';
-//import Icon from 'react-native-vector-icons/FontAwesome5';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 import { useTheme } from '@react-navigation/native';
 import { KeyButton } from './KeyButton.component';
 import { useAppDispatch } from '../stores/hooks';
 import { push, backspace, calculate, pushFn, clean } from '../stores/calculatorSlice';
 import { ExpressionsList } from './ExpressionsList';
-
-interface IconProps {
-  name: string;
-  size?: number;
-}
-function Icon({ name, size }: IconProps) {
-  return (<Text>{name}</Text>)
-}
 
 export function Keyboard() {
   const { colors, dark } = useTheme();
@@ -89,7 +81,7 @@ export function Keyboard() {
       <View style={styles.buttonsContatiner}>
         <TouchableOpacity style={styles.buttonContainer} onPress={() => toggleHistory()}>
           <Text style={styles.buttonText}>
-            {showHistory ? (<Icon name="calculator" size={15}/>) : (<Icon name="clipboard" size={15}/>)}
+          {showHistory ? (<Icon name="calculator" size={15}/>) : (<Icon name="clipboard" size={15}/>)}
           </Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => pressedBS()}>

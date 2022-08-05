@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "npx react-native run-android && react-native start",
+    "android": "npx react-native run-android && npx react-native start",
     "android:release": "npx react-native run-android --variant=release",
     "android:deploy": "cd android && ./gradlew clean && ./gradlew :app:bundleRelease",
     "genkey": "keytool -genkeypair -v -keystore react-calculator-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000 && mv react-calculator-key.keystore android/app/",
@@ -15,10 +15,12 @@
   "dependencies": {
     "@react-navigation/native": "^6.0.11",
     "@reduxjs/toolkit": "^1.8.3",
+    "@types/react-native-vector-icons": "^6.4.11",
     "react": "18.0.0",
     "react-native": "0.69.3",
     "react-native-safe-area-context": "^4.3.1",
     "react-native-sqlite-storage": "^6.0.1",
+    "react-native-vector-icons": "^9.2.0",
     "react-redux": "^8.0.2",
     "redux": "^4.2.0"
   },

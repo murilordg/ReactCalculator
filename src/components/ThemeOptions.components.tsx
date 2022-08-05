@@ -1,17 +1,7 @@
 import React from 'react';
 import { View, Switch, Text } from 'react-native';
-//import Icon from 'react-native-vector-icons/FontAwesome5';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 import { useTheme } from '@react-navigation/native';
-
-interface IconProps {
-    name: string;
-    size?: number;
-    style?: any;
-  }
-  function Icon({ name, size }: IconProps) {
-    return (<Text>{name}</Text>)
-  }
-
   
 interface ThemeOptionsProps {
     toggleTheme: () => void

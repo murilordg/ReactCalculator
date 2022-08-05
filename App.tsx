@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Provider } from 'react-redux';
 import { store } from './src/stores';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, Text, useWindowDimensions, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
@@ -35,6 +35,9 @@ const MyLightTheme = {
 
 export default function App() {
   const [ dark, setDark ] = useState(true);
+  const { height, width } = useWindowDimensions();
+
+  const isPortrait = (height >= width);
 
   const toggleTheme = () => {
     setDark((dark) => !dark);
@@ -51,14 +54,21 @@ export default function App() {
 
   return (
     <Provider store={store}>
-      <SafeAreaProvider style={{marginTop: 24}}>
+      <SafeAreaProvider>
         <NavigationContainer theme={theme}>
           <View style={styles.appContainer}>
             <ThemeOptions toggleTheme={toggleTheme} />
-
-            <Display />
-
-            <Keyboard />  
+            
+            {
+            (isPortrait) ? 
+              (<><Display /><Keyboard /></>) : 
+              (
+                <View style={{flex: 1, flexDirection: 'row'}}>
+                  <Display />
+                  <Keyboard />
+                </View>
+              )
+            }
           </View>
         </NavigationContainer>
       </SafeAreaProvider>

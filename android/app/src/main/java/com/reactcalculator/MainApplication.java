@@ -12,7 +12,8 @@ import com.facebook.soloader.SoLoader;
 import com.reactcalculator.newarchitecture.MainApplicationReactNativeHost;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
-import org.pgsqlite.SQLitePluginPackage;
+//import org.pgsqlite.SQLitePluginPackage;
+//import com.horcrux.svg.SvgPackage;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -31,6 +32,7 @@ public class MainApplication extends Application implements ReactApplication {
           // packages.add(new MyReactNativePackage());
 
             //packages.add(new SQLitePluginPackage());
+            //packages.add(new SvgPackage());
 
           return packages;
         }
